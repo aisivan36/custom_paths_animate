@@ -25,6 +25,12 @@ class _CirclesState extends State<Circles> with SingleTickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -135,9 +141,9 @@ class CirclePainter extends CustomPainter {
   bool showDots, showPath;
 
   var myPaint = Paint()
-    ..color = Colors.purple
+    ..color = Colors.amber
     ..style = PaintingStyle.stroke
-    ..strokeWidth = 5.0;
+    ..strokeWidth = 7.0;
 
   double radius = 80;
 
