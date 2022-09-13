@@ -46,6 +46,8 @@ class _CirclesState extends State<Circles> with SingleTickerProviderStateMixin {
                 animation: controller,
                 builder: (context, child) => Center(
                   child: CustomPaint(
+                    isComplex: true,
+                    willChange: true,
                     painter: CirclePainter(
                       circles: circles,
                       progress: controller.value,
@@ -161,7 +163,11 @@ class CirclePainter extends CustomPainter {
       }
       if (showDots) {
         try {
-          PathMetric metric = extractPath.computeMetrics().first;
+          //  TODO this error firstwhere bad state
+          /// Note that.. for it's been fixed
+          PathMetric metric = extractPath.computeMetrics().firstWhere(
+              (PathMetric? element) => element != null ? true : false,
+              orElse: () => pathMetric);
           final offset = metric.getTangentForOffset(metric.length)?.position;
           canvas.drawCircle(offset!, 8.0, Paint());
         } catch (err) {
