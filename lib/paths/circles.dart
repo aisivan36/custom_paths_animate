@@ -165,9 +165,9 @@ class CirclePainter extends CustomPainter {
         try {
           //  TODO this error firstwhere bad state
           /// Note that.. for it's been fixed
-          PathMetric metric = extractPath.computeMetrics().firstWhere(
-              (PathMetric? element) => element != null ? true : false,
-              orElse: () => pathMetric);
+          PathMetric metric = extractPath
+              .computeMetrics()
+              .firstWhere((element) => true, orElse: () => pathMetric);
           final offset = metric.getTangentForOffset(metric.length)?.position;
           canvas.drawCircle(offset!, 8.0, Paint());
         } catch (err) {

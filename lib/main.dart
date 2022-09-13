@@ -1,5 +1,6 @@
 import 'package:custom_paths_animate/paths/circles.dart';
 import 'package:custom_paths_animate/paths/lines.dart';
+import 'package:custom_paths_animate/paths/polygon.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,9 +36,7 @@ class _HomePageState extends State<HomePage> {
   static const List<Widget> screens = [
     Lines(),
     Circles(), // Circles Page
-    Center(
-      child: Text('Polygon'),
-    ),
+    Polygon(),
     Center(
       child: Text('Spiral'),
     ),
