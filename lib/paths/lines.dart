@@ -36,8 +36,8 @@ class _LinesState extends State<Lines> with SingleTickerProviderStateMixin {
       ),
       body: SafeArea(
         child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.start,
-          // mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
           children: [
             AnimatedBuilder(
               animation: controller,
